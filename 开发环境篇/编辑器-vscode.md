@@ -14,4 +14,5 @@
 1. [Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
 1. [Draw.io Integration: Mermaid plugin](https://marketplace.visualstudio.com/items?itemName=nopeslide.vscode-drawio-plugin-mermaid)
 1. [koroFileHeader](https://marketplace.visualstudio.com/items?itemName=OBKoro1.korofileheader) - [github](https://github.com/OBKoro1/koro1FileHeader/wiki/%E5%AE%89%E8%A3%85%E5%92%8C%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B)
-1. [CSS Modules](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules) -- 支持cssModules的自动补全和跳转到定义
+1. [CSS Modules](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules) -- 支持 cssModules 的自动补全和跳转到定义
+1. [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) -- import/require 的文件大小开销计算
