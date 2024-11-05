@@ -18,3 +18,7 @@
 1. [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) -- import/require 的文件大小开销计算
 1. [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) -- 支持 PlantUML 语法
 1. [Excalidraw-cj](https://marketplace.visualstudio.com/items?itemName=telesoho.excalidraw-editor-cj) -- 支持手写风格的绘图，并支持中文
+
+## Cursor
+
+1. [Cursor](https://www.cursor.sh/) - 支持 AI 的代码编辑器，通知支持移植vscode设置到cursor。
