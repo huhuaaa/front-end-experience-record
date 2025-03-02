@@ -17,6 +17,7 @@
 1. [CSS Modules](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules) -- 支持 cssModules 的自动补全和跳转到定义
 1. [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) -- import/require 的文件大小开销计算
 1. [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) -- 支持 PlantUML 语法
+1. [Mermaid Preview](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview)  -- Mermaid文本绘图
 1. [Excalidraw-cj](https://marketplace.visualstudio.com/items?itemName=telesoho.excalidraw-editor-cj) -- 支持手写风格的绘图，并支持中文
 
 ## Cursor
