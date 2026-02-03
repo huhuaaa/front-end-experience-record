@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>float实现多栏布局</title>
+        <style type="text/css">
+            html,body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: block;
+            }
+            .container .left {
+                float: left;
+                background-color: aqua;
+                width: 100px;
+            }
+            .container .middle {
+                background-color: red;
+                margin: 0 auto;
+                width: calc(100% - 200px);
+                float: left;
+            }
+            .container .right {
+                float: right;
+                background-color: aqua;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                left
+            </div>
+            <div class="middle">
+                middle
+            </div>
+            <div class="right">
+                right
+            </div>
+        </div>
+    </body>
+</html>

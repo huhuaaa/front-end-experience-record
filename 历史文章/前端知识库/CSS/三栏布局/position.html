@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>flex实现多栏布局</title>
+        <style type="text/css">
+            html,body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: table;
+                width: 100%;
+            }
+            .container .left {
+                background-color: aqua;
+                width: 100px;
+                display: table-cell;
+            }
+            .container .middle {
+                background-color: red;
+                display: table-cell;
+            }
+            .container .right {
+                background-color: aqua;
+                display: table-cell;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                left
+            </div>
+            <div class="middle">
+                middle
+            </div>
+            <div class="right">
+                right
+            </div>
+        </div>
+        <div style="padding-top: 60px;">
+            原理说明：<br />
+            1. display: table; // 模拟table部署<br />
+            2. display: table-cell; // 模拟td标签布局<br />
+            3. display: table-row; // 模拟tr标签布局<br />
+        </div>
+    </body>
+</html>

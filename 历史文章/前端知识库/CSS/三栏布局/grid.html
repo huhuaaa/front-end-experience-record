@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>grid实现多栏布局</title>
+        <style type="text/css">
+            html,body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: 100px 1fr 100px;
+            }
+            .container .left {
+                background-color: aqua;
+                /* width: 100px; */
+            }
+            .container .middle {
+                background-color: red;
+            }
+            .container .right {
+                background-color: aqua;
+                /* width: 100px; */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                left
+            </div>
+            <div class="middle">
+                middle
+            </div>
+            <div class="right">
+                right
+            </div>
+        </div>
+    </body>
+</html>

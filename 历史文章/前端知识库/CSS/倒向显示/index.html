@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS倒向显示</title>
+        <style type="text/css">
+            html,
+            body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overflow-y: auto;
+            }
+
+            .main {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+
+            /* 列表容器：核心样式 */
+            .reverse-list-container {
+                width: 300px;
+                height: 400px;
+                /* 固定高度，必设！否则无法滚动 */
+                border: 1px solid #eee;
+                border-radius: 8px;
+                padding: 10px;
+                box-sizing: border-box;
+                /* 核心：倒序布局 */
+                display: flex;
+                flex-direction: column-reverse; /* 垂直方向，逆向显示；就是DOM树从上到下，界面显示从下到上。（默认为从上到下） */
+                /* flex-direction: row-reverse; // 水平方向，逆向显示；就是DOM树从上到下，界面显示从右到左。（默认为从左到右） */
+                /* 滚动配置 */
+                overflow-y: auto;
+                /* 垂直滚动 */
+                overflow-x: hidden;
+                /* 隐藏横向滚动 */
+                gap: 8px;
+                /* 项之间的间距，可选 */
+            }
+
+            /* 列表项：基础样式，可自定义 */
+            .list-item {
+                padding: 12px;
+                background: #f5f5f5;
+                border-radius: 4px;
+                word-break: break-all;
+                /* 防止内容溢出 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div id="reverseList" class="reverse-list-container">
+                <div class="list-item">旧内容1</div>
+                <div class="list-item">旧内容2</div>
+            </div>
+            <div>
+                <button id="addItemBtn">添加老内容</button>
+                <button id="addItemBtn2">添加新内容</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            // 获取DOM元素
+            const listContainer = document.getElementById('reverseList');
+            const addBtn = document.getElementById('addItemBtn');
+            const addBtn2 = document.getElementById('addItemBtn2');
+            let index = 3; // 模拟新内容索引
+
+            // 方法1：推荐使用scrollIntoView，滚动更顺滑（推荐）
+            function addItemAndScroll1() {
+                // 1. 创建新列表项
+                const newItem = document.createElement('div');
+                newItem.className = 'list-item';
+                newItem.textContent = `新内容${index++}`;
+
+                // 2. 插入到容器（DOM正序插入，视觉自动置顶）
+                listContainer.appendChild(newItem);
+
+                // 3. 滚动到新内容：新项scrollIntoView，配置顺滑滚动
+                newItem.scrollIntoView({
+                    behavior: 'smooth', // 顺滑滚动，移除则为瞬间滚动
+                    block: 'start' // 滚动到项的顶部位置
+                });
+            }
+
+            // 方法2：使用scrollTop，适合简单场景（瞬间滚动）
+            function addItemAndScroll2() {
+                const newItem = document.createElement('div');
+                newItem.className = 'list-item';
+                newItem.textContent = `新内容${index++}`;
+                listContainer.insertBefore(newItem, listContainer.children[0]);
+
+                // 滚动到容器顶部（倒序布局下，顶部是最新内容）
+                listContainer.scrollTop = 0;
+            }
+
+            // 绑定按钮点击事件（选其中一种方法即可）
+            addBtn.addEventListener('click', addItemAndScroll1);
+            addBtn2.addEventListener('click', addItemAndScroll2);
+        </script>
+    </body>
+</html>

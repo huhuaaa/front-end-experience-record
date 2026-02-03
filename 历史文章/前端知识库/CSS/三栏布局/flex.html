@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>flex实现多栏布局</title>
+        <style type="text/css">
+            html,body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: flex;
+            }
+            .container .left {
+                background-color: aqua;
+                width: 100px;
+            }
+            .container .middle {
+                flex: 1;
+                background-color: red;
+            }
+            .container .right {
+                background-color: aqua;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                left
+            </div>
+            <div class="middle">
+                middle
+            </div>
+            <div class="right">
+                right
+            </div>
+        </div>
+    </body>
+</html>
