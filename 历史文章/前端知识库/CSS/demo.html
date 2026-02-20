@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>移动自适应方案（rem）</title>
+        <!-- 添加viewport用于兼容ratina等高清屏幕，相同的设备宽度可以显示多个像素，此行声明让宽度以真实的宽度来显示，而不是像素。 -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1.0,maximum=scale=1.0">
+        <style type="text/css">
+            html, body {
+                padding: 0;
+                margin: 0;
+            }
+            @media (min-width: 320px) {
+                /* 手机 */
+                html {
+                    font-size: 20px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                /* 平板 */ 
+                html {
+                    font-size: 32px;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                /* PC */
+                html {
+                    font-size: 40px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background: red;width: 2rem;height: 1rem;"></div>
+    </body>
+</html>

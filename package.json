@@ -1,0 +1,18 @@
+{
+  "name": "front-end-experience-record",
+  "version": "1.0.0",
+  "description": "此项目用于记录一些前端开发中的常用经验沉淀，以便后续在各种业务场景或者开发环境快速复用。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "react": "^19.2.4",
+    "tailwindcss": "^4.2.0",
+    "tailwindcss-cli": "^0.1.2"
+  }
+}
