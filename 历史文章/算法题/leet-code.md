@@ -227,6 +227,11 @@ function minimumCost(nums: number[]): number {
 3 <= n <= 50
 1 <= nums[i] <= 50
 
+### 4.1 个人解法
+
+解题思路：
+![](../../demo/draw/4-1.excalidraw.png)
+
 ```TypeScript
 class Solution {
     private cacheMaps: Map<number, [number, number]> = new Map();
@@ -250,16 +255,18 @@ class Solution {
     public addNum(num: number) {
         // 记录数字到缓存数组中
         this.cacheArray.push(num);
-        let findIndex = false;
+        let findIndex: number = -1;
         for(let index = 0; index < this.cacheSortArray.length; index++) {
             if (this.cacheSortArray[index] >= num) {
-                // 在第一个大于等于num的位置前插入num，插入后跳出循环
-                this.cacheSortArray.splice(index, 0, num);
-                findIndex = true;
+                // 记录在第一个大于等于num的位置，然后跳出循环
+                findIndex = index;
                 break;
             }
         }
-        if (!findIndex) {
+        if (findIndex >= 0) {
+            // 在第一个大于等于num的位置前插入num
+            this.cacheSortArray.splice(findIndex, 0, num);
+        } else {
             // 如果没有找到大于等于num的数字，那么就将num插入到数组的最后面
             this.cacheSortArray.push(num);
         }
