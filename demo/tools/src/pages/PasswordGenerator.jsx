@@ -33,7 +33,7 @@ function getStrength(password) {
 }
 
 export default function PasswordGenerator() {
-  const [length, setLength] = useState(16)
+  const [length, setLength] = useState(10)
   const [options, setOptions] = useState({
     upper: true,
     lower: true,
