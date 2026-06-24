@@ -80,8 +80,11 @@ export default function WatermarkTool() {
   }, [text, fontSize, opacity, color, position])
 
   useEffect(() => {
-    draw()
-  }, [draw])
+    if (image) {
+      // 等 canvas 挂载到 DOM 后再绘制
+      requestAnimationFrame(() => draw())
+    }
+  }, [image, draw])
 
   const handleUpload = (e) => {
     const file = e.target.files?.[0]
@@ -92,7 +95,6 @@ export default function WatermarkTool() {
       imageRef.current = img
       setImage(url)
       setImageSize({ w: img.naturalWidth, h: img.naturalHeight })
-      setPreviewUrl(null)
     }
     img.src = url
   }
