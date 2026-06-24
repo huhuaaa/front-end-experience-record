@@ -14,6 +14,7 @@ function createWm(overrides = {}) {
     fontSize: 48,
     opacity: 0.3,
     color: '#ffffff',
+    rotation: 0,
     flipH: false,
     flipV: false,
     ...overrides,
@@ -47,6 +48,7 @@ export default function WatermarkTool() {
     for (const wm of watermarks) {
       ctx.save()
       ctx.translate(wm.x, wm.y)
+      ctx.rotate((wm.rotation * Math.PI) / 180)
       ctx.scale(wm.flipH ? -1 : 1, wm.flipV ? -1 : 1)
       ctx.font = `${wm.fontSize}px ${FONT_FAMILY}`
       ctx.fillStyle = wm.color
@@ -80,11 +82,18 @@ export default function WatermarkTool() {
 
   function hitTest(canvas, wm, cx, cy) {
     const ctx = canvas.getContext('2d')
+    // inverse-transform the click point into watermark-local space
+    const dx = cx - wm.x
+    const dy = cy - wm.y
+    const angle = (-wm.rotation * Math.PI) / 180
+    const localX = dx * Math.cos(angle) - dy * Math.sin(angle)
+    const localY = dx * Math.sin(angle) + dy * Math.cos(angle)
+
     ctx.font = `${wm.fontSize}px ${FONT_FAMILY}`
     const metrics = ctx.measureText(wm.text)
     const halfW = metrics.width / 2 + 8
     const halfH = wm.fontSize / 2 + 8
-    return cx >= wm.x - halfW && cx <= wm.x + halfW && cy >= wm.y - halfH && cy <= wm.y + halfH
+    return localX >= -halfW && localX <= halfW && localY >= -halfH && localY <= halfH
   }
 
   // ---- 拖拽事件 ----
@@ -315,6 +324,21 @@ export default function WatermarkTool() {
                   value={selectedWm.color}
                   onChange={(e) => updateSelected('color', e.target.value)}
                   className="w-8 h-8 rounded cursor-pointer border border-gray-200"
+                />
+              </div>
+
+              {/* 旋转 */}
+              <div>
+                <label className="block text-xs text-gray-500 mb-1">
+                  旋转: {selectedWm.rotation}°
+                </label>
+                <input
+                  type="range"
+                  min={0}
+                  max={359}
+                  value={selectedWm.rotation}
+                  onChange={(e) => updateSelected('rotation', Number(e.target.value))}
+                  className="w-full accent-blue-500"
                 />
               </div>
 
