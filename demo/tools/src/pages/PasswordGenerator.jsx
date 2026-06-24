@@ -40,7 +40,7 @@ export default function PasswordGenerator() {
     number: true,
     symbol: true,
   })
-  const [excludeAmbiguous, setExcludeAmbiguous] = useState(false)
+  const [excludeAmbiguous, setExcludeAmbiguous] = useState(true)
   const [password, setPassword] = useState('')
   const [copied, setCopied] = useState(false)
   const [history, setHistory] = useState([])
