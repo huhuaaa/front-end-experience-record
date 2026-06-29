@@ -21,6 +21,9 @@
 1. [Excalidraw-cj](https://marketplace.visualstudio.com/items?itemName=telesoho.excalidraw-editor-cj) -- 支持手写风格的绘图，并支持中文
 1. [Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 
-## Cursor
+## AI编码工具
 
 1. [Cursor](https://www.cursor.sh/) - 支持 AI 的代码编辑器，通知支持移植vscode设置到cursor。
+2. [Claude Code](https://claude.com/product/claude-code) - Harness编码最佳实践的Agent工具
+3. [Codex](https://chatgpt.com/codex) - OpenAI出品，类似Claude Code
+4. [Trea](https://www.trae.ai/) - 字节出品，类似Cursor
